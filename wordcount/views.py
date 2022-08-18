@@ -17,7 +17,7 @@ def count(request):
 		else:
 			# add the word
 			worddict[word] = 1
-
+    print('Word Count')
 	sortedwords = sorted(worddict.items(), key = operator.itemgetter(1), reverse = True)
 
 	return render(request, 'count.html', {'fulltext' : fulltext, 'count': len(wordlist), 'worddict' : sortedwords, 'wordlist' : worddict.items() })
